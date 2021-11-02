@@ -1,6 +1,8 @@
 {
   "processes": [
     {
+      "id": "process_1",
+      "name": "My 1st process",
       "start": {
         "id": "startEvent_1",
         "name": "start event 1"
@@ -31,13 +33,13 @@
       ],
       "boundaryEvents": [
         {
+          "id": "task1",
+          "name": "My duration 1",
           "timerEventDefinition": {
             "timeDuration": {
               "duration": "PT10S"
             }
-          },
-          "id": "task1",
-          "name": "My duration 1"
+          }
         }
       ],
       "end": {
@@ -70,11 +72,11 @@
           "targetRef": "endEvent_1",
           "id": "flow_4"
         }
-      ],
-      "id": "process_1",
-      "name": "My 1st process"
+      ]
     },
     {
+      "id": "process_2",
+      "name": "My 2nd process",
       "isExecutable": false,
       "start": {
         "id": "startEvent_2",
@@ -128,9 +130,7 @@
           "targetRef": "endEvent_2",
           "id": "flow_9"
         }
-      ],
-      "id": "process_2",
-      "name": "My 2nd process"
+      ]
     }
   ]
 }
