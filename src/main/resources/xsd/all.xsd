@@ -1,0 +1,6 @@
+<xsd:schema xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified" attributeFormDefault="unqualified" >
+    <xsd:import namespace="http://navarrop.com/bpmn" schemaLocation="myDef.xsd"/>
+    <xsd:import namespace="http://www.omg.org/spec/BPMN/20100524/MODEL" schemaLocation="BPMN20.xsd"/>
+</xsd:schema>

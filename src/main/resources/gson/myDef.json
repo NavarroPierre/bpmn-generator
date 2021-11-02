@@ -8,7 +8,17 @@
       "tasks": [
         {
           "id": "task0",
-          "name": "My task 0"
+          "name": "My task 0",
+          "parameters": [
+            {
+              "name": "prop1",
+              "value": ["value1","value2"]
+            },
+            {
+              "name": "prop2",
+              "value": ["value1"]
+            }
+          ]
         },
         {
           "id": "task2",

@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions id="id_root" targetNamespace="http://flowable.org/bpmn20" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:flowable="http://flowable.org/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<definitions id="id_root" targetNamespace="http://flowable.org/bpmn20" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:flowable="http://flowable.org/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:myDef="http://navarrop.com/bpmn">
   <process id="process_1" name="My 1st process" isExecutable="true">
     <startEvent id="startEvent_1" name="start event 1"/>
-    <userTask id="task0" name="My task 0"/>
+    <userTask id="task0" name="My task 0">
+      <extensionElements>
+        <myDef:parameter name="prop1">
+          <myDef:value><![CDATA[value1]]></myDef:value>
+          <myDef:value><![CDATA[value2]]></myDef:value>
+        </myDef:parameter>
+        <myDef:parameter name="prop2">
+          <myDef:value><![CDATA[value1]]></myDef:value>
+        </myDef:parameter>
+      </extensionElements>
+    </userTask>
     <userTask id="task2" name="My task 2"/>
     <userTask id="task3" name="My task 3"/>
     <boundaryEvent id="task1" name="My duration 1" attachedToRef="task1_ted">

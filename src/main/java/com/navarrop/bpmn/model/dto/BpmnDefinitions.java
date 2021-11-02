@@ -28,6 +28,9 @@ public class BpmnDefinitions {
     @JacksonXmlProperty(isAttribute = true, localName = "xmlns:xsi")
     private String xmlnsXsi = "http://www.w3.org/2001/XMLSchema-instance";
 
+    @JacksonXmlProperty(isAttribute = true, localName = "xmlns:myDef")
+    private String xmlnsMyDef = "http://navarrop.com/bpmn";
+
     @JacksonXmlElementWrapper(useWrapping = false)
     @JacksonXmlProperty(localName = "process")
     List<BpmnProcess> processes;

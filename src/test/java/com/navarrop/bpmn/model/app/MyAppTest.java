@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.navarrop.bpmn.model.dto.BpmnDefinitions;
 import org.apache.commons.io.FileUtils;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -42,11 +43,15 @@ class MyAppTest {
 
         file = new File(classLoader.getResource("xml/myDef.xml").getFile());
         String xml = FileUtils.readFileToString(file, "UTF-8");
+        StreamSource xsd = new StreamSource(new File(classLoader.getResource("xsd/all.xsd").getFile()));
 
-        StreamSource xsd = new StreamSource(new File(classLoader.getResource("xsd/BPMN20.xsd").getFile()));
+        assertThat(xml).isValidAgainst(xsd);
+        assertThat(sb.toString()).isValidAgainst(xsd);
+
+//        Assertions.assertEquals(xml, sb.toString());
 
         assertThat(xml).and(sb.toString()).areIdentical();
-        assertThat(xml).isValidAgainst(xsd);
+
     }
 
 }
