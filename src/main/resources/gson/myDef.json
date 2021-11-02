@@ -1,0 +1,126 @@
+{
+  "processes": [
+    {
+      "start": {
+        "id": "startEvent_1",
+        "name": "start event 1"
+      },
+      "tasks": [
+        {
+          "id": "task0",
+          "name": "My task 0"
+        },
+        {
+          "id": "task2",
+          "name": "My task 2"
+        },
+        {
+          "id": "task3",
+          "name": "My task 3"
+        }
+      ],
+      "boundaryEvents": [
+        {
+          "timerEventDefinition": {
+            "timeDuration": {
+              "duration": "PT10S"
+            }
+          },
+          "id": "task1",
+          "name": "My duration 1"
+        }
+      ],
+      "end": {
+        "id": "endEvent_1",
+        "name": "end event 1"
+      },
+      "sequenceFlows": [
+        {
+          "sourceRef": "startEvent_1",
+          "targetRef": "task0",
+          "id": "flow_0"
+        },
+        {
+          "sourceRef": "task0",
+          "targetRef": "task1",
+          "id": "flow_1"
+        },
+        {
+          "sourceRef": "task1",
+          "targetRef": "task2",
+          "id": "flow_2"
+        },
+        {
+          "sourceRef": "task2",
+          "targetRef": "task3",
+          "id": "flow_3"
+        },
+        {
+          "sourceRef": "task3",
+          "targetRef": "endEvent_1",
+          "id": "flow_4"
+        }
+      ],
+      "id": "process_1",
+      "name": "My 1st process"
+    },
+    {
+      "isExecutable": false,
+      "start": {
+        "id": "startEvent_2",
+        "name": "start event 2"
+      },
+      "tasks": [
+        {
+          "id": "task4",
+          "name": "My task 4"
+        },
+        {
+          "id": "task5",
+          "name": "My task 5"
+        },
+        {
+          "id": "task6",
+          "name": "My task 6"
+        },
+        {
+          "id": "task7",
+          "name": "My task 7"
+        }
+      ],
+      "end": {
+        "id": "endEvent_2",
+        "name": "end event 2"
+      },
+      "sequenceFlows": [
+        {
+          "sourceRef": "startEvent_2",
+          "targetRef": "task4",
+          "id": "flow_5"
+        },
+        {
+          "sourceRef": "task4",
+          "targetRef": "task5",
+          "id": "flow_6"
+        },
+        {
+          "sourceRef": "task5",
+          "targetRef": "task6",
+          "id": "flow_7"
+        },
+        {
+          "sourceRef": "task6",
+          "targetRef": "task7",
+          "id": "flow_8"
+        },
+        {
+          "sourceRef": "task7",
+          "targetRef": "endEvent_2",
+          "id": "flow_9"
+        }
+      ],
+      "id": "process_2",
+      "name": "My 2nd process"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions id="id_root" targetNamespace="http://flowable.org/bpmn20" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:flowable="http://flowable.org/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <process id="process_1" name="My 1st process" isExecutable="true">
+    <startEvent id="startEvent_1" name="start event 1"/>
+    <userTask id="task0" name="My task 0"/>
+    <userTask id="task2" name="My task 2"/>
+    <userTask id="task3" name="My task 3"/>
+    <boundaryEvent id="task1" name="My duration 1" attachedToRef="task1_ted">
+      <timerEventDefinition id="task1_ted">
+        <timeDuration xsi:type="tFormalExpression">PT10S</timeDuration>
+      </timerEventDefinition>
+    </boundaryEvent>
+    <endEvent id="endEvent_1" name="end event 1"/>
+    <sequenceFlow  id="flow_0" sourceRef="startEvent_1" targetRef="task0"/>
+    <sequenceFlow  id="flow_1" sourceRef="task0" targetRef="task1"/>
+    <sequenceFlow  id="flow_2" sourceRef="task1" targetRef="task2"/>
+    <sequenceFlow  id="flow_3" sourceRef="task2" targetRef="task3"/>
+    <sequenceFlow  id="flow_4" sourceRef="task3" targetRef="endEvent_1"/>
+  </process>
+  <process id="process_2" name="My 2nd process" isExecutable="false">
+    <startEvent id="startEvent_2" name="start event 2"/>
+    <userTask id="task4" name="My task 4"/>
+    <userTask id="task5" name="My task 5"/>
+    <userTask id="task6" name="My task 6"/>
+    <userTask id="task7" name="My task 7"/>
+    <endEvent id="endEvent_2" name="end event 2"/>
+    <sequenceFlow  id="flow_5" sourceRef="startEvent_2" targetRef="task4"/>
+    <sequenceFlow  id="flow_6" sourceRef="task4" targetRef="task5"/>
+    <sequenceFlow  id="flow_7" sourceRef="task5" targetRef="task6"/>
+    <sequenceFlow  id="flow_8" sourceRef="task6" targetRef="task7"/>
+    <sequenceFlow  id="flow_9" sourceRef="task7" targetRef="endEvent_2"/>
+  </process>
+</definitions>
